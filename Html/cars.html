@@ -33,7 +33,7 @@
     <!-- Main Sections -->
     <section class="main">
       <div class="upper">
-        <a href="../Engines/engine.html"><button>Engine</button></a>
+        <button id="engine-btn">Engine</button>
         <button>Suspension</button>
         <a href="../Brakes/brakes.html">
           <button>Brakes</button>
@@ -43,7 +43,13 @@
 
       <div class="middle">
         <div class="image-holder">
-          <img class="js-image" src="../images/Background/Porsche_911.png" alt="Car">
+          <img id="engine-img" class="js-image" src="../images/Background/Porsche_911.png" alt="Car/Engine">
+        </div>
+        <div class="engine-info">
+          <h2 id="car-name"></h2>
+          <p id="engine-car"></p>
+          <p id="engine-name"></p>
+          <p id="engine-cost"></p>
         </div>
       </div>
 
@@ -63,7 +69,9 @@
     </section>
   </main>
 
+  <!-- Scripts -->
   <script src="cars.js"></script>
-  </script>
+  <script src="../Scripts/Cars/carData.js"></script>
+  <script src="../Scripts/Cars/engine.js"></script>
 </body>
 </html>
