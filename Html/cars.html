@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Select a car and explore parts inventory.">
+  <title>Car Inventory - Cars</title>
+  <link rel="stylesheet" href="../Styles/cars.css">
+</head>
+<body>
+  <main>
+    <!-- Navigation -->
+    <section class="nav-sec">
+      <div class="overlay">
+        <div class="select-car">
+          <select id="car-select">
+            <option>Select a Car</option>
+            <option value="Porsche_911">Porsche 911</option>
+            <option value="BMW-M4">BMW M4</option>
+          </select>
+        </div>
+
+        <div class="home-b">
+          <a href="../index.html"><img src="../images/Assets/home.png" alt="Home"></a>
+        </div>
+
+        <div class="menu-button">
+          <button id="menu-btn"><img src="../images/Assets/hamburger.png" alt="Menu"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Sections -->
+    <section class="main">
+      <div class="upper">
+        <a href="../Engines/engine.html"><button>Engine</button></a>
+        <button>Suspension</button>
+        <a href="../Brakes/brakes.html">
+          <button>Brakes</button>
+        </a>
+        <button>Transmission</button>
+      </div>
+
+      <div class="middle">
+        <div class="image-holder">
+          <img class="js-image" src="../images/Background/Porsche_911.png" alt="Car">
+        </div>
+      </div>
+
+      <div class="lower">
+        <button>Exhaust</button>
+        <button>Lights</button>
+        <button>Wheels</button>
+        <button>Interior</button>
+      </div>
+    </section>
+
+    <!-- Search footer -->
+    <section class="last">
+      <button>Prev</button>
+      <input type="search" placeholder="Search parts">
+      <button>Next</button>
+    </section>
+  </main>
+
+  <script src="cars.js"></script>
+  </script>
+</body>
+</html>
