@@ -30,6 +30,7 @@ img {
 button {
   background: white;
   border: none;
+  cursor: pointer;
 }
 
 select {
@@ -54,20 +55,74 @@ select {
   background-color: rgba(0,0,0,0.6);
 }
 
+/* Buttons in upper and lower sections */
+.upper button, .lower button {
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  transition: background-color 0.3s;
+}
+
+/* Active button style */
+.upper button.active, .lower button.active {
+  background-color: black;
+  color: white;
+}
+
+button:active {
+  background-color: black;
+}
+
+/* Middle section: image + engine info stacked vertically */
 .middle {
   flex-grow: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 10%;
+  width: 100%;
+  margin: 0 auto;
+  gap: 10px;
 }
 
+/* Car, engine, and brake images */
 .image-holder img {
-  width: 90%;
+  width: 134%;          /* increased by 40% */
+  max-width: 840px;     /* increased by 40% */
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: transform 0.4s ease-in-out;
 }
 
+/* Zoom-in effect on hover */
+.image-holder img:hover {
+  transform: scale(1.05);
+}
+
+/* Engine and brake info */
+.engine-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.engine-info h2, 
+.engine-info p {
+  margin: 0;
+  padding: 0;
+  color: #FF8C00;
+  background-color: #FFFFFF25; /* slightly more white */
+  font-size: 30px;
+  font-weight: 10px;
+}
+
+/* Footer */
 .last {
   height: 10vh;
   background-color: rgba(100, 0, 100, 0.8);
@@ -83,3 +138,64 @@ input {
   border: none;
   padding-left: 10px;
 }
+
+/* Sidebar */
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: translateX(-100%); /* hide initially */
+  transition: transform 0.4s ease;
+  padding-top: 80px;
+  z-index: 100;
+}
+
+aside.active {
+  transform: translateX(0);
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside ul li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+a:hover {
+  color: green;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-holder img {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  input {
+    width: 150px;
+  }
+  select {
+    width: 110px;
+  }
+  .upper button, .lower button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+  }
