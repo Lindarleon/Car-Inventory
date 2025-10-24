@@ -12,6 +12,7 @@ body {
 /* Title section */
 .title-sec {
   height: 91vh;
+  position: relative; /* ✅ allows positioning of menu button inside */
 }
 
 .overlay {
@@ -26,6 +27,22 @@ body {
 }
 
 img {
+  width: 40px;
+  height: 40px;
+}
+
+/* ✅ Menu button in top-right corner */
+.menu-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.menu-btn img {
   width: 40px;
   height: 40px;
 }
@@ -58,6 +75,22 @@ input {
   border-radius: 20px;
   padding-left: 15px;
   font-size: 17px;
+}
+
+#img-btn {
+  border-radius: 50px;
+  background-color: white;
+  border-style: none;
+}
+
+#src-img {
+  border-radius: 20px;
+  background-color: white;
+  padding-left: 20px;
+}
+
+#src-img:active {
+  background-color: blue;
 }
 
 /* Sidebar */
@@ -101,3 +134,77 @@ aside ul li a {
 a:hover {
   color: green;
 }
+
+/* ---- keep your existing code above this unchanged ---- */
+
+/* Title section */
+.title-sec {
+  height: 91vh;
+  /* keep as-is for mobile stacking */
+  position: relative;
+}
+
+/* Base overlay: mobile-first centered layout */
+.overlay {
+  display: flex;
+  justify-content: center;   /* mobile: center everything */
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 20px;             /* small padding so it doesn't touch edges */
+  box-sizing: border-box;
+}
+
+/* title area wrapper already in your HTML */
+.title-content {
+  /* center text on mobile */
+  text-align: center;
+  flex: 0 1 auto;            /* allow it to shrink/grow naturally on mobile */
+}
+
+/* menu-button wrapper already in your HTML */
+.menu-button {
+  /* keep it small and out of the normal flow on mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+/* the actual button style */
+.menu-button button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.menu-button img {
+  width: 40px;
+  height: 40px;
+}
+
+/* ---- Desktop / laptop layout: use flex:2 / flex:1 and stick menu to right ---- */
+@media (min-width: 900px) {
+  .overlay {
+    justify-content: space-between; /* split left/right */
+    align-items: center;
+  }
+
+  .title-content {
+    flex: 2 1 0;           /* take most of the horizontal space */
+    text-align: left;      /* keep title aligned left on large screens */
+    padding-left: 40px;    /* spacing from the left edge */
+  }
+
+  .menu-button {
+    flex: 1 0 auto;        /* smaller column on the right */
+    display: flex;
+    justify-content: flex-end; /* stick button to the right within this column */
+    padding-right: 40px;       /* spacing from the right edge */
+  }
+
+  /* ensure the menu button visually pins to top-right area (not absolute) */
+  .menu-button button {
+    padding: 8px;
+  }
+  }
