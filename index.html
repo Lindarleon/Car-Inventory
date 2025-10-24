@@ -10,7 +10,7 @@
 <body>
   <main>
     <!-- Title Section -->
-    <section class="title-sec">
+   <section class="title-sec">
       <div class="overlay">
         <div class="title-content">
           <h1 class="title">CAR INVENTORY</h1>
@@ -40,7 +40,7 @@
       <nav class="nav-bar">
         <div class="search-b">
           <input type="search" placeholder="Search a car">
-          <button><img src="images/Assets/search.png"></button>
+          <button id="img-btn"><img id="src-img" src="images/Assets/search.png"></button>
         </div>
       </nav>
     </section>
@@ -55,25 +55,4 @@
     });
   </script>
 </body>
-</html>
-    <!-- Bottom Search Section -->
-    <section class="low-section">
-      <nav class="nav-bar">
-        <div class="search-b">
-          <input type="search" placeholder="Search a car">
-          <button><img src="images/Assets/search.png"></button>
-        </div>
-      </nav>
-    </section>
-  </main>
-
-  <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const sideMenu = document.getElementById("side-menu");
-
-    menuBtn.addEventListener("click", () => {
-      sideMenu.classList.toggle("active");
-    });
-  </script>
-</body>
-</html>
+  </html>
